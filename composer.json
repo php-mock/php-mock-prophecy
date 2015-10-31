@@ -1,0 +1,30 @@
+{
+    "name": "php-mock/php-mock-prophecy",
+    "type": "library",
+    "description": "Mock built-in PHP functions (e.g. time()) with Prophecy. This package relies on PHP's namespace fallback policy. No further extension is needed.",
+    "keywords": ["prophecy", "mock", "stub", "test double", "function", "test", "TDD", "BDD"],
+    "homepage": "https://github.com/php-mock/php-mock-prophecy",
+    "license": "WTFPL",
+    "authors": [
+        {
+            "name": "Markus Malkusch",
+            "email": "markus@malkusch.de",
+            "homepage": "http://markus.malkusch.de",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"phpmock\\prophecy\\": "classes/"}
+    },
+    "require": {
+        "php": ">=5.5",
+        "php-mock/php-mock-integration": "^1",
+        "phpspec/prophecy": "^1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5"
+    },
+    "archive": {
+        "exclude": ["/tests"]
+    }
+}
