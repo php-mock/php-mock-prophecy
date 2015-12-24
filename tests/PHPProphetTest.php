@@ -46,4 +46,14 @@ class PHPProphetTest extends AbstractMockTest
     {
         PHPProphet::define($namespace, $functionName);
     }
+
+    /**
+     * This test is skipped until PHPUnit#2016 is resolved.
+     *
+     * @see https://github.com/sebastianbergmann/phpunit/issues/2016
+     */
+    public function testBackupStaticAttributes()
+    {
+        $this->markTestSkipped("Skip until PHPUnit#2016 is resolved");
+    }
 }
