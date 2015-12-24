@@ -1,0 +1,8 @@
+{
+    "name": "php-mock/php-mock-prophecy-doc",
+    "require": {
+        "php": ">=5",
+	"php-mock/php-mock-prophecy": "dev-master",
+	"apigen/apigen": "^4"
+    }
+}
