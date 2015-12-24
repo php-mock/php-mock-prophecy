@@ -97,10 +97,6 @@ PHP
         // TODO support variadics as well. See #91.
         $arguments = [];
         foreach ($method->getArguments() as $argument) {
-            if ($argument->isOptional()) {
-                continue;
-            }
-
             if ($argument->isPassedByReference()) {
                 $arguments[] = sprintf("&$%s", $argument->getName());
             } else {
