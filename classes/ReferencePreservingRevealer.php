@@ -2,6 +2,7 @@
 
 namespace phpmock\prophecy;
 
+use phpmock\generator\MockFunctionGenerator;
 use Prophecy\Prophecy\RevealerInterface;
 
 /**
@@ -36,6 +37,7 @@ final class ReferencePreservingRevealer implements RevealerInterface
     public function reveal($value)
     {
         if (is_array($value)) {
+            MockFunctionGenerator::removeDefaultArguments($value);
             foreach ($value as &$item) {
                 $item = $this->revealer->reveal($item);
             }
