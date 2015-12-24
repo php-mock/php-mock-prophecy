@@ -21,7 +21,7 @@ use Prophecy\Exception\Prediction\AggregateException;
  *
  * assert(123 == time());
  * $prophet->checkPredictions();
- * <code>
+ * </code>
  *
  * @author Markus Malkusch <markus@malkusch.de>
  * @link bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK Donations
