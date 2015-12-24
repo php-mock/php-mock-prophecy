@@ -14,7 +14,10 @@
         }
     ],
     "autoload": {
-        "psr-4": {"phpmock\\prophecy\\": "classes/"}
+        "psr-4": {
+            "phpmock\\prophecy\\": "classes/",
+            "Prophecy\\": "overwrites/Prophecy/"
+        }
     },
     "require": {
         "php": ">=5.5",

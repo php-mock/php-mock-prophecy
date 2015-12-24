@@ -49,6 +49,13 @@ This library comes with the same restrictions as the underlying
   this issue you can call [`PHPProphet::define()`](http://php-mock.github.io/php-mock-prophecy/api/class-phpmock.prophecy.PHPProphet.html#_define)
   before that first call. This would define a side effectless namespaced function.
 
+* Additionally it shares restrictions from Prophecy as well:
+  Prophecy [doesn't support pass-by-reference](https://github.com/phpspec/prophecy/issues/225).
+  To support pass-by-reference here, an implicit feature of composer
+  is used. It may work accidentially but can change at any moment.
+  If you need pass-by-reference in prophecies, consider using another framework
+  (e.g. [php-mock-phpunit](https://github.com/php-mock/php-mock-phpunit)).
+
 # License and authors
 
 This project is free and under the WTFPL.
