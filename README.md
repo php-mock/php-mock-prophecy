@@ -51,7 +51,8 @@ This library comes with the same restrictions as the underlying
 
 * Additionally it shares restrictions from Prophecy as well:
   Prophecy [doesn't support pass-by-reference](https://github.com/phpspec/prophecy/issues/225).
-  To support pass-by-reference here, an implicit feature of composer
+  To support pass-by-reference here, an
+  [implicit feature of composer](https://github.com/composer/composer/issues/4732)
   is used. It may work accidentially but can change at any moment.
   If you need pass-by-reference in prophecies, consider using another framework
   (e.g. [php-mock-phpunit](https://github.com/php-mock/php-mock-phpunit)).
