@@ -7,14 +7,14 @@ use phpmock\integration\MockDelegateFunctionBuilder;
 use Prophecy\Prophecy\ProphecyInterface;
 
 /**
- * The single function revelation.
+ * A function revelation.
  *
  * @author Markus Malkusch <markus@malkusch.de>
  * @link bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK Donations
  * @license http://www.wtfpl.net/txt/copying/ WTFPL
  * @internal
  */
-class Revelation implements ProphecyInterface
+final class Revelation implements ProphecyInterface
 {
 
     /**
@@ -28,16 +28,16 @@ class Revelation implements ProphecyInterface
     private $functionName;
 
     /**
-     * @var ProphecyInterface The prophecy
+     * @var ProphecyInterface The prophecy.
      */
     private $prophecy;
     
     /**
-     * Setup the revelation.
-     * 
-     * @param String $namespace           The namespace.
-     * @param String $functionName        The function name.
-     * @param ProphecyInterface $prophecy The prophecy.
+     * Builds the revelation.
+     *
+     * @param String $namespace           function namespace
+     * @param String $functionName        function name
+     * @param ProphecyInterface $prophecy prophecy
      */
     public function __construct($namespace, $functionName, ProphecyInterface $prophecy)
     {
@@ -48,10 +48,10 @@ class Revelation implements ProphecyInterface
     
     /**
      * Reveals the function prophecy.
-     * 
+     *
      * I.e. the prophesized function will become effective.
-     * 
-     * @return Mock The enabled function mock.
+     *
+     * @return Mock enabled function mock
      */
     public function reveal()
     {

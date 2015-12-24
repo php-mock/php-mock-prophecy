@@ -6,7 +6,7 @@ use phpmock\AbstractMockTest;
 use Prophecy\Argument;
 
 /**
- * Tests PHPProphet.
+ * A tests for PHPProphet.
  *
  * @author Markus Malkusch <markus@malkusch.de>
  * @link bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK Donations
@@ -17,7 +17,7 @@ class PHPProphetTest extends AbstractMockTest
 {
     
     /**
-     * @var PHPProphet The SUT. 
+     * @var PHPProphet The SUT.
      */
     private $prophet;
 
@@ -36,9 +36,14 @@ class PHPProphetTest extends AbstractMockTest
     protected function mockFunction($namespace, $functionName, callable $function)
     {
         $prophecy = $this->prophet->prophesize($namespace);
-        $prophecy->$functionName(Argument::cetera())->will(function(array $parameters) use ($function) {
+        $prophecy->$functionName(Argument::cetera())->will(function (array $parameters) use ($function) {
             return call_user_func_array($function, $parameters);
         });
         $prophecy->reveal();
+    }
+
+    protected function defineFunction($namespace, $functionName)
+    {
+        PHPProphet::define($namespace, $functionName);
     }
 }

@@ -8,17 +8,18 @@ use Prophecy\Prophecy\ProphecyInterface;
 use Prophecy\Prophecy\MethodProphecy;
 
 /**
- * Function prophecy.
+ * A function prophecy.
  *
  * @author Markus Malkusch <markus@malkusch.de>
  * @link bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK Donations
  * @license http://www.wtfpl.net/txt/copying/ WTFPL
+ * @internal
  */
-class FunctionProphecy implements ProphecyInterface
+final class FunctionProphecy implements ProphecyInterface
 {
     
     /**
-     * @var Prophet The prophet 
+     * @var Prophet The prophet.
      */
     private $prophet;
     
@@ -35,9 +36,8 @@ class FunctionProphecy implements ProphecyInterface
     /**
      * Sets the prophet.
      *
-     * @param string  $namespace The namespace.
-     * @param Prophet $prophet   The prophet.
-     * @internal
+     * @param string  $namespace function namespace
+     * @param Prophet $prophet   prophet
      */
     public function __construct($namespace, Prophet $prophet)
     {
@@ -46,12 +46,13 @@ class FunctionProphecy implements ProphecyInterface
     }
     
     /**
-     * Creates a new function prophecy using specified function name and arguments.
+     * Creates a new function prophecy using the specified function name
+     * and arguments.
      *
-     * @param string $functionName The function name.
-     * @param array  $arguments    The arguments.
+     * @param string $functionName function name
+     * @param array  $arguments    arguments
      *
-     * @return MethodProphecy The function prophecy.
+     * @return MethodProphecy function prophecy
      */
     public function __call($functionName, array $arguments)
     {
@@ -64,7 +65,7 @@ class FunctionProphecy implements ProphecyInterface
     
     /**
      * Reveals the function prophecies.
-     * 
+     *
      * I.e. the prophesized functions will become effective.
      */
     public function reveal()
