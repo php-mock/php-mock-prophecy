@@ -31,7 +31,7 @@ final class ReferencePreservingRevealer implements RevealerInterface
     }
 
     /**
-     * @SuppressWarnings(PHPMD)    
+     * @SuppressWarnings(PHPMD)
      */
     public function reveal($value)
     {

@@ -27,7 +27,7 @@ matrix:
     - php: hhvm
 
 install:
-  - composer require phpspec/prophecy :${PROPHECY_VERSION}
+  - composer require phpspec/prophecy:${PROPHECY_VERSION}
   - composer require squizlabs/php_codesniffer
   - composer require phpmd/phpmd
 
