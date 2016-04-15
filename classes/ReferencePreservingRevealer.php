@@ -42,7 +42,6 @@ final class ReferencePreservingRevealer implements RevealerInterface
                 $item = $this->revealer->reveal($item);
             }
             return $value;
-
         } else {
             return $this->revealer->reveal($value);
         }
