@@ -56,4 +56,14 @@ class PHPProphetTest extends AbstractMockTest
     {
         $this->markTestSkipped("Skip until PHPUnit#2016 is resolved");
     }
+
+    /**
+     * Pass-By-Reference is not supported in Prophecy.
+     *
+     * @see https://github.com/phpspec/prophecy/issues/225
+     */
+    public function testPassingByReference()
+    {
+        $this->markTestSkipped("Pass-By-Reference is not supported in Prophecy");
+    }
 }
