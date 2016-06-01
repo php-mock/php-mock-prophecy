@@ -13,6 +13,10 @@ use Prophecy\Exception\Prediction\AggregateException;
  *
  * Example:
  * <code>
+ * namespace foo;
+ *
+ * use phpmock\prophecy\PHPProphet;
+ *
  * $prophet = new PHPProphet();
  *
  * $prophecy = $prophet->prophesize(__NAMESPACE__);

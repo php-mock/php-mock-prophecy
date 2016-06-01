@@ -18,8 +18,6 @@ and create function prophecies for a given namespace
 with [`PHPProphet::prophesize()`](http://php-mock.github.io/php-mock-prophecy/api/class-phpmock.prophecy.PHPProphet.html#_prophesize):
 
 ```php
-<?php
-
 namespace foo;
 
 use phpmock\prophecy\PHPProphet;
