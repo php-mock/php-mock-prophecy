@@ -2,7 +2,7 @@
 
 namespace phpmock\prophecy;
 
-use phpmock\MockRegistry;
+use phpmock\Mock;
 use phpmock\MockBuilder;
 use Prophecy\Prophet;
 use Prophecy\Prophecy\ProphecyInterface;
@@ -73,10 +73,11 @@ final class PHPProphet
      * It will also disable all previously revealed function prophecies.
      *
      * @throws AggregateException If any prediction fails.
+     * @SuppressWarnings(PHPMD)
      */
     public function checkPredictions()
     {
-        MockRegistry::getInstance()->unregisterAll();
+        Mock::disableAll();
         $this->prophet->checkPredictions();
     }
     
