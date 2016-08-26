@@ -31,13 +31,13 @@ use Prophecy\Exception\Prediction\AggregateException;
  * @link bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK Donations
  * @license http://www.wtfpl.net/txt/copying/ WTFPL
  */
-final class PHPProphet
+class PHPProphet
 {
 
     /**
      * @var Prophet The prophet.
      */
-    private $prophet;
+    protected $prophet;
     
     /**
      * Builds the prophet.
