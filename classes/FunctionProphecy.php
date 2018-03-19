@@ -56,10 +56,22 @@ final class FunctionProphecy implements ProphecyInterface
      */
     public function __call($functionName, array $arguments)
     {
-        $delegateBuilder = new MockDelegateFunctionBuilder();
-        $delegateBuilder->build($functionName);
-        $prophecy = $this->prophet->prophesize($delegateBuilder->getFullyQualifiedClassName());
-        $this->revelations[] = new Revelation($this->namespace, $functionName, $prophecy);
+        foreach ($this->revelations as $revelation) {
+            if ($revelation->namespace === $this->namespace
+                && $revelation->functionName === $functionName
+            ) {
+                $prophecy = $revelation->prophecy;
+                break;
+            }
+        }
+
+        if (! isset($prophecy)) {
+            $delegateBuilder = new MockDelegateFunctionBuilder();
+            $delegateBuilder->build($functionName);
+            $prophecy = $this->prophet->prophesize($delegateBuilder->getFullyQualifiedClassName());
+            $this->revelations[] = new Revelation($this->namespace, $functionName, $prophecy);
+        }
+
         return $prophecy->__call(MockDelegateFunctionBuilder::METHOD, $arguments);
     }
     
