@@ -7,6 +7,7 @@ use phpmock\MockBuilder;
 use Prophecy\Prophet;
 use Prophecy\Prophecy\ProphecyInterface;
 use Prophecy\Exception\Prediction\AggregateException;
+use ReflectionProperty;
 
 /**
  * A Prophet for built-in PHP functions.
@@ -120,7 +121,7 @@ final class PHPProphet
      */
     private static function getProperty(Prophet $prophet, $property)
     {
-        $reflection = new \ReflectionProperty($prophet, $property);
+        $reflection = new ReflectionProperty($prophet, $property);
         $reflection->setAccessible(true);
         return $reflection->getValue($prophet);
     }
