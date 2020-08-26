@@ -6,6 +6,7 @@ cache:
 
 env:
   - PROPHECY_VERSION=dev-master
+  - PROPHECY_VERSION=~1.11.0
   - PROPHECY_VERSION=~1.10.0
   - PROPHECY_VERSION=~1.9.0
   - PROPHECY_VERSION=~1.8.0
@@ -28,6 +29,24 @@ php:
 
 matrix:
   fast_finish: true
+  exclude:
+    - php: 7.1
+      env: PROPHECY_VERSION=dev-master
+    - php: 7.1
+      env: PROPHECY_VERSION=~1.11.0
+
+    - php: 7.0
+      env: PROPHECY_VERSION=dev-master
+    - php: 7.0
+      env: PROPHECY_VERSION=~1.11.0
+      
+    - php: 5.6
+      env: PROPHECY_VERSION=dev-master
+    - php: 5.6
+      env: PROPHECY_VERSION=~1.11.0
+
+  allow_failures:
+    - env: PROPHECY_VERSION=dev-master
 
 install:
   - composer require phpspec/prophecy:${PROPHECY_VERSION} squizlabs/php_codesniffer phpmd/phpmd cundd/test-flight
