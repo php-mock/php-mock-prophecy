@@ -2,6 +2,7 @@
 
 namespace phpmock\prophecy;
 
+use PHPUnit\Framework\TestCase;
 use \Prophecy\Prophet;
 
 /**
@@ -11,7 +12,7 @@ use \Prophecy\Prophet;
  * @link bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK Donations
  * @license http://www.wtfpl.net/txt/copying/ WTFPL
  */
-class RegressionTest extends \PHPUnit_Framework_TestCase
+final class RegressionTest extends TestCase
 {
 
     /**
