@@ -7,6 +7,7 @@ use phpmock\MockBuilder;
 use Prophecy\Prophet;
 use Prophecy\Prophecy\ProphecyInterface;
 use Prophecy\Exception\Prediction\AggregateException;
+use ReflectionProperty;
 
 /**
  * A Prophet for built-in PHP functions.
@@ -38,7 +39,7 @@ final class PHPProphet
      * @var Prophet The prophet.
      */
     private $prophet;
-    
+
     /**
      * Builds the prophet.
      *
@@ -49,12 +50,12 @@ final class PHPProphet
         if (is_null($prophet)) {
             $prophet = new Prophet();
         }
-        
+
         $revealer = new ReferencePreservingRevealer(self::getProperty($prophet, "revealer"));
         $util     = self::getProperty($prophet, "util");
         $this->prophet = new Prophet($prophet->getDoubler(), $revealer, $util);
     }
-    
+
     /**
      * Creates a new function prophecy for a given namespace.
      *
@@ -66,7 +67,7 @@ final class PHPProphet
     {
         return new FunctionProphecy($namespace, $this->prophet);
     }
-    
+
     /**
      * Checks all predictions defined by prophecies of this Prophet.
      *
@@ -80,7 +81,7 @@ final class PHPProphet
         Mock::disableAll();
         $this->prophet->checkPredictions();
     }
-    
+
     /**
      * Defines the function prophecy in the given namespace.
      *
@@ -109,7 +110,7 @@ final class PHPProphet
             ->build()
             ->define();
     }
-    
+
     /**
      * Returns a private property of a prophet.
      *
@@ -120,7 +121,7 @@ final class PHPProphet
      */
     private static function getProperty(Prophet $prophet, $property)
     {
-        $reflection = new \ReflectionProperty($prophet, $property);
+        $reflection = new ReflectionProperty($prophet, $property);
         $reflection->setAccessible(true);
         return $reflection->getValue($prophet);
     }

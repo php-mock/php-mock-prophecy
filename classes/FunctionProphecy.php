@@ -17,22 +17,22 @@ use Prophecy\Prophecy\MethodProphecy;
  */
 final class FunctionProphecy implements ProphecyInterface
 {
-    
+
     /**
      * @var Prophet The prophet.
      */
     private $prophet;
-    
+
     /**
      * @var string The namespace.
      */
     private $namespace;
-    
+
     /**
      * @var Revelation[] The delegated prophecies.
      */
     private $revelations = [];
-    
+
     /**
      * Sets the prophet.
      *
@@ -44,7 +44,7 @@ final class FunctionProphecy implements ProphecyInterface
         $this->prophet   = $prophet;
         $this->namespace = $namespace;
     }
-    
+
     /**
      * Creates a new function prophecy using the specified function name
      * and arguments.
@@ -74,7 +74,7 @@ final class FunctionProphecy implements ProphecyInterface
 
         return $prophecy->__call(MockDelegateFunctionBuilder::METHOD, $arguments);
     }
-    
+
     /**
      * Reveals the function prophecies.
      *

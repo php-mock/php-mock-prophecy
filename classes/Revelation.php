@@ -18,20 +18,23 @@ final class Revelation implements ProphecyInterface
 {
 
     /**
+     * @internal
      * @var string The function namespace.
      */
     public $namespace;
 
     /**
+     * @internal
      * @var string The function name.
      */
     public $functionName;
 
     /**
+     * @internal
      * @var ProphecyInterface The prophecy.
      */
     public $prophecy;
-    
+
     /**
      * Builds the revelation.
      *
@@ -45,7 +48,7 @@ final class Revelation implements ProphecyInterface
         $this->functionName = $functionName;
         $this->prophecy     = $prophecy;
     }
-    
+
     /**
      * Reveals the function prophecy.
      *

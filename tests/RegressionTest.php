@@ -2,7 +2,8 @@
 
 namespace phpmock\prophecy;
 
-use \Prophecy\Prophet;
+use PHPUnit\Framework\TestCase;
+use Prophecy\Prophet;
 
 /**
  * Regression tests for Prophecy.
@@ -11,7 +12,7 @@ use \Prophecy\Prophet;
  * @link bitcoin:1335STSwu9hST4vcMRppEPgENMHD2r1REK Donations
  * @license http://www.wtfpl.net/txt/copying/ WTFPL
  */
-class RegressionTest extends \PHPUnit_Framework_TestCase
+final class RegressionTest extends TestCase
 {
 
     /**
@@ -26,7 +27,7 @@ class RegressionTest extends \PHPUnit_Framework_TestCase
         $prophecy = $prophet->prophesize(OptionalParameterHolder::class);
         $prophecy->call("arg1")->willReturn("mocked");
         $mock = $prophecy->reveal();
-        
+
         $this->assertEquals("mocked", $mock->call("arg1"));
         $prophet->checkPredictions();
     }
