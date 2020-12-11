@@ -15,7 +15,7 @@ use Prophecy\Argument;
  */
 final class PHPProphetTest extends AbstractMockTest
 {
-    
+
     /**
      * @var PHPProphet The SUT.
      */
