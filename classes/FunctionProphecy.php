@@ -57,7 +57,8 @@ final class FunctionProphecy implements ProphecyInterface
     public function __call($functionName, array $arguments)
     {
         foreach ($this->revelations as $revelation) {
-            if ($revelation->namespace === $this->namespace
+            if (
+                $revelation->namespace === $this->namespace
                 && $revelation->functionName === $functionName
             ) {
                 $prophecy = $revelation->prophecy;
