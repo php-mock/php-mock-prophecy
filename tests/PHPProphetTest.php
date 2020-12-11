@@ -47,6 +47,28 @@ final class PHPProphetTest extends AbstractMockTest
         PHPProphet::define($namespace, $functionName);
     }
 
+    public function testDoubleMockTheSameFunctionWithDifferentArguments()
+    {
+        $prophecy = $this->prophet->prophesize(__NAMESPACE__);
+        $prophecy->min(1, 10)->willReturn(0);
+        $prophecy->min(20, 30)->willReturn(1);
+        $prophecy->reveal();
+
+        $this->assertSame(0, min(1, 10));
+        $this->assertSame(1, min(20, 30));
+    }
+
+    public function testTwoDifferentFunctionsMock()
+    {
+        $prophecy = $this->prophet->prophesize(__NAMESPACE__);
+        $prophecy->min(1, 10)->willReturn(0);
+        $prophecy->max(20, 30)->willReturn(1);
+        $prophecy->reveal();
+
+        $this->assertSame(0, min(1, 10));
+        $this->assertSame(1, max(20, 30));
+    }
+
     /**
      * This test is skipped until PHPUnit#2016 is resolved.
      *
