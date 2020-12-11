@@ -31,7 +31,7 @@ final class Revelation implements ProphecyInterface
      * @var ProphecyInterface The prophecy.
      */
     private $prophecy;
-    
+
     /**
      * Builds the revelation.
      *
@@ -45,7 +45,7 @@ final class Revelation implements ProphecyInterface
         $this->functionName = $functionName;
         $this->prophecy     = $prophecy;
     }
-    
+
     /**
      * Reveals the function prophecy.
      *

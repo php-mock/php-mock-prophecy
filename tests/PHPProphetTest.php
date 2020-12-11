@@ -13,15 +13,15 @@ use Prophecy\Argument;
  * @license http://www.wtfpl.net/txt/copying/ WTFPL
  * @see PHPProphet
  */
-class PHPProphetTest extends AbstractMockTest
+final class PHPProphetTest extends AbstractMockTest
 {
-    
+
     /**
      * @var PHPProphet The SUT.
      */
     private $prophet;
 
-    protected function setup()
+    protected function setUp(): void
     {
         parent::setUp();
 
