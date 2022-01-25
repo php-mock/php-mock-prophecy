@@ -14,7 +14,6 @@ use Prophecy\Prophet;
  */
 final class RegressionTest extends TestCase
 {
-
     /**
      * Calling no optional parameter
      *

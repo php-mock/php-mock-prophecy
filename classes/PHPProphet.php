@@ -34,7 +34,6 @@ use ReflectionProperty;
  */
 final class PHPProphet
 {
-
     /**
      * @var Prophet The prophet.
      */

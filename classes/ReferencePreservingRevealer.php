@@ -15,7 +15,6 @@ use Prophecy\Prophecy\RevealerInterface;
  */
 final class ReferencePreservingRevealer implements RevealerInterface
 {
-
     /**
      * @var RevealerInterface The subject.
      */

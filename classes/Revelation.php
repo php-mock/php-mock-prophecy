@@ -16,7 +16,6 @@ use Prophecy\Prophecy\ProphecyInterface;
  */
 final class Revelation implements ProphecyInterface
 {
-
     /**
      * @internal
      * @var string The function namespace.

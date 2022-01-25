@@ -17,7 +17,6 @@ use Prophecy\Prophecy\MethodProphecy;
  */
 final class FunctionProphecy implements ProphecyInterface
 {
-
     /**
      * @var Prophet The prophet.
      */
