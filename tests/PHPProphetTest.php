@@ -2,7 +2,7 @@
 
 namespace phpmock\prophecy;
 
-use phpmock\AbstractMockTest;
+use phpmock\AbstractMockTestCase;
 use Prophecy\Argument;
 
 /**
@@ -13,7 +13,7 @@ use Prophecy\Argument;
  * @license http://www.wtfpl.net/txt/copying/ WTFPL
  * @see PHPProphet
  */
-final class PHPProphetTest extends AbstractMockTest
+final class PHPProphetTest extends AbstractMockTestCase
 {
     /**
      * @var PHPProphet The SUT.
