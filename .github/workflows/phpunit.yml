@@ -5,6 +5,10 @@ on:
   schedule:
     - cron:  "0 0 * * *"
 
+concurrency:
+  group: ${{ github.head_ref || 'cron' }}
+  cancel-in-progress: true
+
 jobs:
   phpunit:
     name: PHPUnit tests on PHP ${{ matrix.php-version }}
