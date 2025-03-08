@@ -20,7 +20,7 @@
     },
     "require": {
         "php": ">=7.2",
-        "php-mock/php-mock-integration": "^3.0.0-beta1",
+        "php-mock/php-mock-integration": "^2.2.1 || ^3.0",
         "phpspec/prophecy": "^1.12.1"
     },
     "require-dev": {
